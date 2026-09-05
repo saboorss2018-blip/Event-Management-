@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventHub - Register</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="auth-page">
+
+<header class="navbar">
+    <div class="logo">🎟️ Event<span>Hub</span></div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="login.html" class="nav-login">Login</a>
+    </nav>
+</header>
+
+<div class="auth-container">
+
+    <div class="auth-card">
+
+        <div class="auth-icon register-icon">🚀</div>
+
+        <h1>Create Account</h1>
+        <p class="auth-subtitle">Join EventHub and start booking events.</p>
+
+        <form id="registerForm">
+
+            <label>Full Name</label>
+            <input
+                type="text"
+                id="registerName"
+                placeholder="Enter your name"
+                required
+            >
+
+            <label>Email Address</label>
+            <input
+                type="email"
+                id="registerEmail"
+                placeholder="Enter your email"
+                required
+            >
+
+            <label>Password</label>
+            <input
+                type="password"
+                id="registerPassword"
+                placeholder="Create a password"
+                required
+            >
+
+            <button type="submit" class="btn primary-btn full-btn">
+                ✨ Create Account
+            </button>
+
+        </form>
+
+        <div id="registerMessage"></div>
+
+        <p class="auth-bottom">
+            Already have an account?
+            <a href="login.html">Login</a>
+        </p>
+
+    </div>
+
+</div>
+
+<script src="js/app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+services:
+
+  db:
+    image: mysql:8.0
+    container_name: event-db
+    restart: unless-stopped
+
+    environment:
+      MYSQL_DATABASE: eventdb
+      MYSQL_USER: eventuser
+      MYSQL_PASSWORD: eventpass
+      MYSQL_ROOT_PASSWORD: rootpass
+
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./database/schema.sql:/docker-entrypoint-initdb.d/schema.sql:ro
+
+
+  backend:
+    build: ./backend
+    container_name: event-backend
+    restart: unless-stopped
+
+    environment:
+      MYSQL_HOST: db
+      MYSQL_DATABASE: eventdb
+      MYSQL_USER: eventuser
+      MYSQL_PASSWORD: eventpass
+
+    depends_on:
+      - db
+
+    ports:
+      - "5000:5000"
+
+
+  frontend:
+    build: ./frontend
+    container_name: event-frontend
+    restart: unless-stopped
+
+    depends_on:
+      - backend
+
+    ports:
+      - "80:80"
+
+
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: event-prometheus
+    restart: unless-stopped
+
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+
+    depends_on:
+      - backend
+
+    ports:
+      - "9090:9090"
+
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: event-grafana
+    restart: unless-stopped
+
+    depends_on:
+      - prometheus
+
+    ports:
+      - "3000:3000"
+
+
+volumes:
+
+  mysql_data:

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventHub - Discover Events</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="logo">🎟️ Event<span>Hub</span></div>
+
+    <nav>
+        <a href="index.html" class="active">Home</a>
+        <a href="#events">Events</a>
+        <a href="admin.html">Admin</a>
+        <a href="login.html" class="nav-login">Login</a>
+        <a href="register.html" class="nav-register">Register</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <span class="hero-badge">✨ Find Your Next Experience</span>
+
+        <h1>Discover Amazing<br><span>Events Near You</span></h1>
+
+        <p>
+            Find concerts, conferences, workshops and unforgettable
+            experiences. Book your tickets easily with EventHub.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#events" class="btn primary-btn">🎫 Explore Events</a>
+            <a href="register.html" class="btn secondary-btn">Create Account</a>
+        </div>
+    </div>
+
+    <div class="hero-card">
+        <div class="ticket-icon">🎟️</div>
+        <h3>Book Your Experience</h3>
+        <p>Fast • Secure • Simple</p>
+        <div class="mini-stats">
+            <div>
+                <strong>500+</strong>
+                <small>Events</small>
+            </div>
+            <div>
+                <strong>10K+</strong>
+                <small>Users</small>
+            </div>
+            <div>
+                <strong>24/7</strong>
+                <small>Support</small>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="features">
+    <div class="feature">
+        <div class="feature-icon purple">🔎</div>
+        <h3>Find Events</h3>
+        <p>Discover exciting events happening around you.</p>
+    </div>
+
+    <div class="feature">
+        <div class="feature-icon pink">🎫</div>
+        <h3>Easy Booking</h3>
+        <p>Reserve your tickets in just a few clicks.</p>
+    </div>
+
+    <div class="feature">
+        <div class="feature-icon orange">🔒</div>
+        <h3>Secure</h3>
+        <p>Your account and booking information stay protected.</p>
+    </div>
+
+    <div class="feature">
+        <div class="feature-icon blue">⚡</div>
+        <h3>Fast</h3>
+        <p>Quick event discovery and ticket booking.</p>
+    </div>
+</section>
+
+<section id="events" class="events-section">
+
+    <div class="section-heading">
+        <div>
+            <span class="section-label">UPCOMING EVENTS</span>
+            <h2>Popular Events</h2>
+        </div>
+
+        <button class="filter-btn" onclick="loadEvents()">🔄 Refresh</button>
+    </div>
+
+    <div id="events-container" class="events-grid">
+        <div class="loading">
+            <div class="spinner"></div>
+            <p>Loading events...</p>
+        </div>
+    </div>
+
+</section>
+
+<div id="message"></div>
+
+<footer>
+    <div class="footer-content">
+        <div>
+            <div class="logo">🎟️ Event<span>Hub</span></div>
+            <p>Making event booking simple and exciting.</p>
+        </div>
+
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="login.html">Login</a>
+            <a href="register.html">Register</a>
+            <a href="admin.html">Admin</a>
+        </div>
+    </div>
+
+    <div class="copyright">
+        © 2026 EventHub. All rights reserved.
+    </div>
+</footer>
+
+<script src="js/app.js"></script>
+
+</body>
+</html>

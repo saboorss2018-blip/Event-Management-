@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventHub - Admin</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="logo">🎟️ Event<span>Hub</span></div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="#create-event">Create Event</a>
+    </nav>
+</header>
+
+<section class="admin-hero">
+    <div>
+        <span class="section-label">ADMIN PANEL</span>
+        <h1>Event Management</h1>
+        <p>Create and manage your upcoming events.</p>
+    </div>
+</section>
+
+<section id="create-event" class="admin-section">
+
+    <div class="admin-card">
+
+        <h2>➕ Create New Event</h2>
+
+        <form id="eventForm" class="event-form">
+
+            <div class="form-group">
+                <label>Event Name</label>
+                <input
+                    type="text"
+                    id="eventName"
+                    placeholder="Example: Tech Conference 2026"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label>Location</label>
+                <input
+                    type="text"
+                    id="eventLocation"
+                    placeholder="Example: Chennai"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label>Event Date</label>
+                <input
+                    type="datetime-local"
+                    id="eventDate"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label>Total Seats</label>
+                <input
+                    type="number"
+                    id="eventSeats"
+                    placeholder="100"
+                    min="1"
+                    required
+                >
+            </div>
+
+            <button type="submit" class="btn primary-btn">
+                🚀 Create Event
+            </button>
+
+        </form>
+
+        <div id="eventMessage"></div>
+
+    </div>
+
+</section>
+
+<section class="admin-section">
+
+    <div class="section-heading">
+        <div>
+            <span class="section-label">EVENT DATABASE</span>
+            <h2>Current Events</h2>
+        </div>
+    </div>
+
+    <div id="admin-events" class="events-grid"></div>
+
+</section>
+
+<script src="js/app.js"></script>
+
+</body>
+</html>
